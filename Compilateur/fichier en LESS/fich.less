@@ -1,0 +1,29 @@
+PROGRAM Somme;
+
+
+
+
+VAR
+	TAB DW 100 DUP (?) ;
+	R DW ? ;
+
+BEGIN
+
+	MOV SI, 10 ;
+	LEA BX, TAB ; 
+
+	MOV AX, 10 ;
+	MOV CX, 6 ;
+	
+	WHILE (SI <= CX) DO
+		BEGIN
+			ADD AX, [BX + SI] ;
+			ADD SI, 2 ;
+		END;
+	
+	MOV R, AX;	
+
+
+END .
+
+ 

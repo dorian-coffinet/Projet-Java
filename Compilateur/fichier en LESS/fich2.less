@@ -1,0 +1,51 @@
+PROGRAM Somme;
+
+{                                                   }
+{    Ce programme effectue la somme des n premiers  }
+{   elements du tableau                            }
+{                                                   }
+
+VAR
+	TAB DW 100 DUP (?) ; 
+	R DW ? ;
+	
+BEGIN 
+
+	MOV SI,0 ;
+	LEA BX, TAB ; 
+	
+	MOV AX, 0;
+	MOV CX, 6;
+	
+	WHILE ((SI < CX) ET (BX < SI)) DO 
+	
+		BEGIN 
+		
+			ADD AX, [BX + SI] ;
+			ADD SI, 2 ; 
+			
+			IF((SI < CX) OU (BX < SI))THEN
+				BEGIN
+					ADD AX, [BX + SI] ;
+					ADD SI, 2 ; 
+					WHILE (((SI < CX) ET (BX < SI)) OU ((BX = SI) ET (SI <= AX))) DO
+						BEGIN	
+							MOV R, AX ;
+						END	;				
+				END
+			
+			ELSE
+				BEGIN
+					ADD AX, [BX + SI] ;
+					ADD SI, 2 ; 
+				END
+				
+				;
+		END
+		
+		;
+		
+	MOV R, AX ;
+
+END 
+.
