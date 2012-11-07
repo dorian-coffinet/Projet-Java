@@ -1,4 +1,7 @@
 Projets de DUT informatique
 
-Projet 1 Realisation d'un paint 
-Projet 2
+Chaque projet est accompagné d’un RAEDME.txt qui explique le fonctionnement ainsi que le but du programme.
+
+Projet 1 Paint
+Projet 2 Jeu de rôles
+ 
